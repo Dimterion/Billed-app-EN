@@ -19,15 +19,23 @@ export default class NewBill {
     const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
     const filePath = e.target.value.split(/\\/g)
     const fileName = filePath[filePath.length-1]
-    this.firestore
-      .storage
-      .ref(`justificatifs/${fileName}`)
-      .put(file)
-      .then(snapshot => snapshot.ref.getDownloadURL())
-      .then(url => {
-        this.fileUrl = url
-        this.fileName = fileName
-      })
+    // Conditional statement: if file format is jpeg/jpg/png, the "Send" button is active; if not, the "Send" button is disabled and alert is shown.
+    if(file.type == "image/jpeg" || file.type == "image/jpg" || file.type == "image/png") {
+      document.getElementById("btn-send-bill").disabled = false;
+      this.firestore
+        .storage
+        .ref(`justificatifs/${fileName}`)
+        .put(file)
+        .then(snapshot => snapshot.ref.getDownloadURL())
+        .then(url => {
+          this.fileUrl = url
+          this.fileName = fileName
+        })
+    } else {
+      document.getElementById("btn-send-bill").disabled = true;
+      alert ("Files can only be accepted in the .jpeg, .jpg or .png formats.")
+    }
+    // ^^^^^
   }
   handleSubmit = e => {
     e.preventDefault()
