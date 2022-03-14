@@ -22,7 +22,7 @@ const row = (bill) => {
 const rows = (data) => {
   // return (data && data.length) ? data.map(bill => row(bill)).join("") : "" - Added sorting method for the bills.
   return (data && data.length) ? data.sort((valueOne, valueTwo) => {
-    return (new Date(valueOne.date) > new Date(valueTwo.date)) ? 1 : -1
+    return (new Date(valueOne.date) < new Date(valueTwo.date)) ? 1 : -1
   }).map(bill => row(bill)).join("") : ""
   // ^^^^^
 }
