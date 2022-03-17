@@ -5,6 +5,22 @@ import { bills } from "../fixtures/bills.js"
 import { localStorageMock } from "../__mocks__/localStorage"
 
 describe("Given I am connected as an employee", () => {
+  // Tests for checking page loading and error message.
+  describe("Given the page is loading", () => {
+    test("Then page should be rendered", () => {
+      const html = BillsUI({ loading: true })
+      document.body.innerHTML = html
+      expect(screen.getByText("Loading...")).toBeTruthy()
+    })
+  })
+  describe("Given an error occurs", () => {
+    test("Then error page should be rendered", () => {
+      const html = BillsUI({ error: "Error. Page is not loading." })
+      document.body.innerHTML = html
+      expect(screen.getByText("Erreur")).toBeTruthy()
+    })
+  })
+  // ^^^^^
   describe("When I am on Bills Page", () => {
     test("Then bill icon in vertical layout should be highlighted", () => {
       const html = BillsUI({ data: []})
