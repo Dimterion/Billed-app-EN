@@ -5,6 +5,8 @@ import { bills } from "../fixtures/bills.js"
 import { localStorageMock } from "../__mocks__/localStorage"
 import { ROUTES, ROUTES_PATH } from "../constants/routes.js"
 import firebase from "../__mocks__/firebase"
+import Firestore from "../app/Firestore"
+import Router from "../app/Router"
 
 describe("Given I am connected as an employee", () => {
   // Tests for checking page loading and error message.
@@ -36,11 +38,14 @@ describe("Given I am connected as an employee", () => {
       window.localStorage.setItem("user", JSON.stringify({ type: "Employee" }))
     })
     // ^^^^^
+    // Test for checking that bill icon is highlighted.
     test("Then bill icon in vertical layout should be highlighted", () => {
-      const html = BillsUI({ data: []})
-      document.body.innerHTML = html
-      //to-do write expect expression
+      Firestore.bills = () => ({ bills, get: jest.fn().mockResolvedValue() })
+      document.body.innerHTML = `<div id="root"></div>`
+      Router()
+      expect(screen.getByTestId("icon-window").classList.contains("active-icon")).toBe(true)
     })
+    // ^^^^^
     test("Then bills should be ordered from earliest to latest", () => {
       const html = BillsUI({ data: bills })
       document.body.innerHTML = html
