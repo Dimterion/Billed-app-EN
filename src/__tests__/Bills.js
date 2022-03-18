@@ -106,7 +106,7 @@ describe("Given I am connected as an employee", () => {
     // ^^^^^
   })
 })
-// GET Bills integration test
+// GET Bills integration test.
 describe("Given I am a user connected as an Employee", () => {
   describe("When I navigate to Bills page", () => {
     test("fetches bills from mock API GET", async () => {
