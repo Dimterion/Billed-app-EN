@@ -1,7 +1,7 @@
 import VerticalLayout from './VerticalLayout.js'
 
 export default () => {
-
+  // Added data-testid="btn-send-bill" to the submit button.
   return (`
     <div class='layout'>
       ${VerticalLayout(120)}
@@ -62,7 +62,7 @@ export default () => {
             <div class="row">
               <div class="col-md-6">
                 <div class="col-half">
-                  <button type="submit" id='btn-send-bill' class="btn btn-primary">Send</button>
+                  <button type="submit" id='btn-send-bill' data-testid="btn-send-bill" class="btn btn-primary">Send</button>
                 </div>
               </div>
             </div>
@@ -71,4 +71,5 @@ export default () => {
       </div>
     </div>
   `)
+  // ^^^^^
 }
