@@ -8,7 +8,6 @@ import { localStorageMock } from "../__mocks__/localStorage.js"
 import firebase from "../__mocks__/firebase"
 import { bills } from "../fixtures/bills"
 
-
 describe('Given I am connected as an Admin', () => {
   describe('When I am on Dashboard page, there are bills, and there is one pending', () => {
     test('Then, filteredBills by pending status should return 1 bill', () => {
