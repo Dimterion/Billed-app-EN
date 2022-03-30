@@ -1,5 +1,5 @@
-import { ROUTES_PATH } from '../constants/routes.js'
-export let PREVIOUS_LOCATION = ''
+import { ROUTES_PATH } from "../constants/routes.js";
+export let PREVIOUS_LOCATION = "";
 
 // we use a class so as to test its methods in e2e tests
 export default class Login {
@@ -14,6 +14,7 @@ export default class Login {
     const formAdmin = this.document.querySelector(`form[data-testid="form-admin"]`)
     formAdmin.addEventListener("submit", this.handleSubmitAdmin)
   }
+
   handleSubmitEmployee = e => {
     const user = {
       type: "Employee",
@@ -21,6 +22,7 @@ export default class Login {
       password: e.target.querySelector(`input[data-testid="employee-password-input"]`).value,
       status: "connected"
     }
+
     this.localStorage.setItem("user", JSON.stringify(user))
     const userExists = this.checkIfUserExists(user)
     if (!userExists) this.createUser(user)
@@ -40,6 +42,7 @@ export default class Login {
       // ^^^^^
       status: "connected"
     }
+
     this.localStorage.setItem("user", JSON.stringify(user))
     const userExists = this.checkIfUserExists(user)
     if (!userExists) this.createUser(user)
@@ -86,4 +89,4 @@ export default class Login {
       return null
     }
   }
-} 
+}

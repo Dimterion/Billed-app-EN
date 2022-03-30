@@ -1,4 +1,4 @@
-import VerticalLayout from './VerticalLayout.js'
+import VerticalLayout from "./VerticalLayout.js";
 
 export default () => {
   // Added data-testid="btn-send-bill" to the submit button.

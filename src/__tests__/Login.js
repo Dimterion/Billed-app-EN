@@ -1,11 +1,11 @@
-import LoginUI from "../views/LoginUI"
-import Login from '../containers/Login.js'
-import { ROUTES } from "../constants/routes"
-import { fireEvent, screen } from "@testing-library/dom"
+import LoginUI from "../views/LoginUI";
+import Login from "../containers/Login.js";
+import { ROUTES } from "../constants/routes";
+import { fireEvent, screen } from "@testing-library/dom";
 
 describe("Given that I am a user on login page", () => {
   describe("When I do not fill fields and I click on employee button Login In", () => {
-    test("Then It should renders Login page", () => {
+    test("Then It should render Login page", () => {
       document.body.innerHTML = LoginUI()
 
       const inputEmailUser = screen.getByTestId("employee-email-input")
@@ -20,8 +20,8 @@ describe("Given that I am a user on login page", () => {
       form.addEventListener("submit", handleSubmit)
       fireEvent.submit(form) 
       expect(screen.getByTestId("form-employee")).toBeTruthy()
-    })
-  })
+    });
+  });
 
   describe("When I do fill fields in incorrect format and I click on employee button Login In", () => {
     test("Then It should renders Login page", () => {
@@ -41,8 +41,8 @@ describe("Given that I am a user on login page", () => {
       form.addEventListener("submit", handleSubmit)
       fireEvent.submit(form) 
       expect(screen.getByTestId("form-employee")).toBeTruthy()
-    })
-  })
+    });
+  });
 
   describe("When I do fill fields in correct format and I click on employee button Login In", () => {
     test("Then I should be identified as an Employee in app", () => {
@@ -69,7 +69,7 @@ describe("Given that I am a user on login page", () => {
         setItem: jest.fn(() => null)
       },
       writable: true
-    })
+    });
 
     // we have to mock navigation to test it
     const onNavigate = (pathname) => {
@@ -86,7 +86,7 @@ describe("Given that I am a user on login page", () => {
       onNavigate,
       PREVIOUS_LOCATION,
       firebase
-    })
+    });
 
     const handleSubmit = jest.fn(login.handleSubmitEmployee)    
     form.addEventListener("submit", handleSubmit)
@@ -102,14 +102,14 @@ describe("Given that I am a user on login page", () => {
           status: "connected"
         })
       )
-    })  
+    });
 
-    test("It should renders Bills page", () => {
+    test("It should render Bills page", () => {
       expect(screen.getAllByText('My fees')).toBeTruthy()
-    })
+    });
 
-  })
-})
+  });
+});
 
 describe("Given that I am a user on login page", () => {
   describe("When I do not fill fields and I click on admin button Login In", () => {
@@ -128,8 +128,8 @@ describe("Given that I am a user on login page", () => {
       form.addEventListener("submit", handleSubmit)
       fireEvent.submit(form) 
       expect(screen.getByTestId("form-admin")).toBeTruthy()
-    })
-  })
+    });
+  });
 
   describe("When I do fill fields in incorrect format and I click on admin button Login In", () => {
     test("Then it should renders Login page", () => {
@@ -149,8 +149,8 @@ describe("Given that I am a user on login page", () => {
       form.addEventListener("submit", handleSubmit)
       fireEvent.submit(form) 
       expect(screen.getByTestId("form-admin")).toBeTruthy()
-    })
-  })
+    });
+  });
 
   describe("When I do fill fields in correct format and I click on admin button Login In", () => {
     test("Then I should be identified as an HR admin in app", () => {
@@ -179,7 +179,7 @@ describe("Given that I am a user on login page", () => {
           setItem: jest.fn(() => null)
         },
         writable: true
-      })
+      });
 
       // we have to mock navigation to test it
       const onNavigate = (pathname) => {
@@ -196,7 +196,7 @@ describe("Given that I am a user on login page", () => {
         onNavigate,
         PREVIOUS_LOCATION,
         firebase
-      })
+      });
 
       const handleSubmit = jest.fn(login.handleSubmitAdmin)    
 
@@ -212,12 +212,12 @@ describe("Given that I am a user on login page", () => {
             password: inputData.password,
             status: "connected"
           })
-        )
-      })  
+        );
+      });
 
-    test("It should renders HR dashboard page", () => {
+    test("It should render HR dashboard page", () => {
       expect(screen.queryByText('Confirmation')).toBeTruthy()
-    })
+    });
   
-  })
-})
+  });
+});
