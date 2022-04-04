@@ -23,19 +23,19 @@ HTML, CSS, JavaScript, React
 
 ## How to run the application localy
 
-*Clone the project*
+*Clone the project:*
 `$ git clone https://github.com/Dimterion/Billing-application-for-the-HR-department`
 
-*Go to the cloned directory*
+*Go to the cloned directory:*
 `$ cd Billing-application-for-the-HR-departmen`
 
-*Install npm packages (described in package.json)*
+*Install npm packages (described in package.json):*
 `$ npm install`
 
-*Install live-server to run a local server*
+*Install live-server to run a local server:*
 `$ npm install -g live-server`
 
-*Launch the application*
+*Launch the application:*
 `$ live-server`
 
 *Then navigate to:*
@@ -43,20 +43,18 @@ HTML, CSS, JavaScript, React
 
 ## How to run all tests with Jest
 
+*Use the following command:*
 `$ npm run test`
 
 ## How to run a single test
 
-*Install jest-cli*
-
+*Install jest-cli:*
 `$npm i -g jest-cli`
 
-*Then*
-
+*Then:*
 `$jest src/__tests__/your_test_file.js`
 
 ## How to see test coverage
 
 *Navigate to:*
-
 `http://127.0.0.1:8080/coverage/lcov-report/`
