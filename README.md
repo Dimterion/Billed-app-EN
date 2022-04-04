@@ -19,6 +19,7 @@ HTML, CSS, JavaScript, React
 - Write a manual E2E test plan [E2E test plan](https://github.com/Dimterion/Billing-application-for-the-HR-department/blob/master/E2E%20test%20plan%20for%20the%20Billed%20app%20(employee%20section).pdf)
 - Write integration tests with JavaScript
 - Write unit tests with JavaScript
+- Complete the tasks on the provided Kanban board [Kanban board](https://even-moonflower-317.notion.site/ae9bbda1188045c189134fe97b6694e2?v=4dcbb8f046d74c1c900dfa4da2375198)
 
 ## How to run the app localy
 
