@@ -21,43 +21,42 @@ HTML, CSS, JavaScript, React
 - Write integration tests with JavaScript
 - Write unit tests with JavaScript
 
-## How to run the app localy
+## How to run the application localy
 
-*clone the project*
-`$ git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-EN.git`
-https://github.com/Dimterion/Billing-application-for-the-HR-department
+*Clone the project*
+`$ git clone https://github.com/Dimterion/Billing-application-for-the-HR-department`
 
-*go to the cloned repo*
-`$ cd Billed-app-EN`
+*Go to the cloned directory*
+`$ cd Billing-application-for-the-HR-departmen`
 
-*install npm packages (described in package.json)*
+*Install npm packages (described in package.json)*
 `$ npm install`
 
-*install live-server to run a local server*
+*Install live-server to run a local server*
 `$ npm install -g live-server`
 
-*launch the App*
+*Launch the application*
 `$ live-server`
 
-*then go to :*
+*Then navigate to:*
 `http://127.0.0.1:8080/`
 
 ## How to run all tests with Jest
 
 `$ npm run test`
 
-**How to run a single test:**
+## How to run a single test
 
-*install jest-cli*
+*Install jest-cli*
 
 `$npm i -g jest-cli`
 
-*then*
+*Then*
 
 `$jest src/__tests__/your_test_file.js`
 
 ## How to see test coverage
 
+*Navigate to:*
+
 `http://127.0.0.1:8080/coverage/lcov-report/`
-
-
